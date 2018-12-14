@@ -1,5 +1,6 @@
 package br.abraao.pa.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -16,7 +17,10 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(of = { "id" })
 @NoArgsConstructor
-public class Funcionario {
+public class Funcionario implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	
 	@Id
 	private Long id;

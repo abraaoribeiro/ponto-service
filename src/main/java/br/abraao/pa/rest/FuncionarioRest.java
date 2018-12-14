@@ -29,7 +29,7 @@ public class FuncionarioRest {
 
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
-
+	
 	@GetMapping
 	public ResponseEntity<?> findAll(Pageable pageable) {
 		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(10, TimeUnit.SECONDS))
@@ -48,6 +48,7 @@ public class FuncionarioRest {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Funcionario insert(@RequestBody Funcionario foo) {
 		return funcionarioRepository.save(foo);
+		
 	}
 
 	@PutMapping(path = "/{id}")
